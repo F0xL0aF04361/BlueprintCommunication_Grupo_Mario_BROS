@@ -1,20 +1,14 @@
 # Auto detect text files and perform LF normalization
 * text=auto
-
 # Example folder using LFS
 Content/BlueprintCommunication 5.8/** filter=lfs diff=lfs merge=lfs -text
-
 ______________________________
 # unreal assests
 ______________________________
-
 *.uassest filter=lfs diff=lfs merge=lfs -text
-
-
 ## -----------------------------------------------------------------------------
 # 2. TEXT FILES  (NOT in LFS)
 # -----------------------------------------------------------------------------
-
 # --- Unreal project / config files ---
 *.uproject          text eol=lf linguist-language=JSON
 *.uplugin           text eol=lf linguist-language=JSON
@@ -22,7 +16,6 @@ ______________________________
 *.ini               text eol=lf
 *.target            text eol=lf
 *.modules           text eol=lf
-
 # --- C++ source ---
 *.c                 text eol=lf diff=cpp
 *.cc                text eol=lf diff=cpp
@@ -34,18 +27,15 @@ ______________________________
 *.ipp               text eol=lf diff=cpp
 *.m                 text eol=lf
 *.mm                text eol=lf
-
 # --- C# build scripts (Build.cs / Target.cs) ---
 *.cs                text eol=lf diff=csharp
 *.csproj            text eol=lf
 *.sln               text eol=lf
-
 # --- Shaders ---
 *.usf               text eol=lf
 *.ush               text eol=lf
 *.hlsl              text eol=lf
 *.glsl              text eol=lf
-
 # --- Scripts / build tooling ---
 *.py                text eol=lf diff=python
 *.sh                text eol=lf
@@ -59,7 +49,6 @@ ______________________________
 *.cmake             text eol=lf
 CMakeLists.txt      text eol=lf
 Makefile            text eol=lf
-
 # --- Data / docs ---
 *.json              text eol=lf
 *.yml               text eol=lf
@@ -74,7 +63,6 @@ Makefile            text eol=lf
 *.po                text eol=lf
 *.pot               text eol=lf
 *.locres.txt        text eol=lf
-
 # --- Git / editor config ---
 .gitattributes      text eol=lf
 .gitignore          text eol=lf
@@ -82,8 +70,6 @@ Makefile            text eol=lf
 .editorconfig       text eol=lf
 .clang-format       text eol=lf
 .clang-tidy         text eol=lf
-
-
 # -----------------------------------------------------------------------------
 # 3. BINARY FILES  (NOT in LFS)
 # -----------------------------------------------------------------------------
@@ -93,14 +79,11 @@ Makefile            text eol=lf
 *.icns              binary
 *.svg               text eol=lf
 *.gif               binary
-
-
 # -----------------------------------------------------------------------------
 # 4. LFS-TRACKED FILES  (large binary assets)
 # -----------------------------------------------------------------------------
 # lockable = file is read-only until locked (git lfs lock), which prevents
 # merge conflicts on files that cannot be merged. Use on Unreal assets.
-
 # --- Unreal assets & levels (binary, unmergeable -> lockable) ---
 *.uasset            filter=lfs diff=lfs merge=lfs -text lockable
 *.umap              filter=lfs diff=lfs merge=lfs -text lockable
@@ -116,7 +99,6 @@ Makefile            text eol=lf
 *.pak               filter=lfs diff=lfs merge=lfs -text
 *.locres            filter=lfs diff=lfs merge=lfs -text
 *.locmeta           filter=lfs diff=lfs merge=lfs -text
-
 # --- Textures / images ---
 *.png               filter=lfs diff=lfs merge=lfs -text
 *.jpg               filter=lfs diff=lfs merge=lfs -text
@@ -134,7 +116,6 @@ Makefile            text eol=lf
 *.xcf               filter=lfs diff=lfs merge=lfs -text
 *.ai                filter=lfs diff=lfs merge=lfs -text
 *.eps               filter=lfs diff=lfs merge=lfs -text
-
 # --- 3D models / animation ---
 *.fbx               filter=lfs diff=lfs merge=lfs -text
 *.obj               filter=lfs diff=lfs merge=lfs -text
@@ -158,7 +139,6 @@ Makefile            text eol=lf
 *.spp               filter=lfs diff=lfs merge=lfs -text
 *.sbs               filter=lfs diff=lfs merge=lfs -text
 *.sbsar             filter=lfs diff=lfs merge=lfs -text
-
 # --- Audio ---
 *.wav               filter=lfs diff=lfs merge=lfs -text
 *.mp3               filter=lfs diff=lfs merge=lfs -text
@@ -168,7 +148,6 @@ Makefile            text eol=lf
 *.aiff              filter=lfs diff=lfs merge=lfs -text
 *.bnk               filter=lfs diff=lfs merge=lfs -text
 *.wem               filter=lfs diff=lfs merge=lfs -text
-
 # --- Video ---
 *.mp4               filter=lfs diff=lfs merge=lfs -text
 *.mov               filter=lfs diff=lfs merge=lfs -text
@@ -177,13 +156,11 @@ Makefile            text eol=lf
 *.webm              filter=lfs diff=lfs merge=lfs -text
 *.wmv               filter=lfs diff=lfs merge=lfs -text
 *.bk2               filter=lfs diff=lfs merge=lfs -text
-
 # --- Fonts ---
 *.ttf               filter=lfs diff=lfs merge=lfs -text
 *.otf               filter=lfs diff=lfs merge=lfs -text
 *.woff              filter=lfs diff=lfs merge=lfs -text
 *.woff2             filter=lfs diff=lfs merge=lfs -text
-
 # --- Compiled libraries / plugins / SDK binaries ---
 *.dll               filter=lfs diff=lfs merge=lfs -text
 *.lib               filter=lfs diff=lfs merge=lfs -text
@@ -195,7 +172,6 @@ Makefile            text eol=lf
 *.apk               filter=lfs diff=lfs merge=lfs -text
 *.aab               filter=lfs diff=lfs merge=lfs -text
 *.ipa               filter=lfs diff=lfs merge=lfs -text
-
 # --- Archives / packaged data / documents ---
 *.zip               filter=lfs diff=lfs merge=lfs -text
 *.7z                filter=lfs diff=lfs merge=lfs -text
@@ -206,7 +182,6 @@ Makefile            text eol=lf
 *.bin               filter=lfs diff=lfs merge=lfs -text
 *.dat               filter=lfs diff=lfs merge=lfs -text
 *.sav               filter=lfs diff=lfs merge=lfs -text
-
 # --- Point clouds / large data /---
 *.ply               filter=lfs diff=lfs merge=lfs -text
 *.las               filter=lfs diff=lfs merge=lfs -text
